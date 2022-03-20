@@ -12,8 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Check system before
+        run: pwd && ls -la
+
       - name: Checkout tools repo
         uses: actions/checkout@v3
         with:
           repository: glials/rails-compose
           path: rails-compose
+
+      - name: Check system after
+        run: ls -la
