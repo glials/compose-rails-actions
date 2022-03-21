@@ -13,9 +13,6 @@ jobs:
 
     steps:
 
-      - name: Check system before
-        run: pwd && ls -la
-
       - name: Checkout tools repo
         uses: actions/checkout@v3
         with:
@@ -26,9 +23,3 @@ jobs:
         uses: ruby/setup-ruby@v1.99.0
         with:
           ruby-version: 3.1
-
-      - name: Check Ruby version
-        run: ruby -v
-
-      - name: Check system after
-        run: ls -la
