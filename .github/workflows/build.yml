@@ -22,5 +22,11 @@ jobs:
           repository: glials/rails-compose
           path: rails-compose
 
+      - name: Setup Ruby, JRuby and TruffleRuby
+        uses: ruby/setup-ruby@v1.99.0
+
+      - name: Check Ruby version
+        run: ruby -v
+
       - name: Check system after
         run: ls -la
