@@ -13,13 +13,18 @@ jobs:
 
     steps:
 
-      - name: Checkout tools repo
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           repository: glials/rails-compose
           path: rails-compose
 
-      - name: Setup Ruby, JRuby and TruffleRuby
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1.99.0
         with:
           ruby-version: 3.1
+
+      - name: Publish gem
+        uses: dawidd6/action-publish-gem@v1.2.0
+        with:
+          api_key: ${{ secrets.RUBYGEMS_API_KEY }}
